@@ -464,10 +464,11 @@
                 ctx.shadowBlur = 0;
             }
 
-            const bars = 160;
+            // Установили количество палочек равным размеру массива данных, чтобы исключить дублирование
+            const bars = dataArray.length; 
             for (let i = 0; i < bars; i++) {
                 const angle = (i / bars) * Math.PI * 2 - Math.PI / 2;
-                const freqVal = dataArray[i % dataArray.length] || 0;
+                const freqVal = dataArray[i];
 
                 const innerR = coreR + 12;
                 const len = (freqVal / 255) * 95 + 4;
